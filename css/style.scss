@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css?family=Palanquin+Dark&subset=latin-ext');
+*{
+	margin:0px;
+	padding: 0px;
+	font-family: 'Palanquin Dark', sans-serif;
+	box-sizing: border-box;
+	cursor: url(../images/cursor.png), auto;
+}
+$bela: rgb(243, 254, 222);
+$tamno-plava: rgb(12, 1, 33);
+$svetlo-plava: rgb(149, 194, 217);
+@mixin sirina{
+	width: inherit;
+	min-height: 100vh;
+}
+@mixin naslov{
+	text-transform: uppercase;
+	font-size: 23px;
+	letter-spacing: 3px;
+	padding-top: 15px;
+}
+h1,h2, h3{
+	@include naslov;
+}
+.clippy2{
+	width: inherit;
+	padding-bottom: 50px;
+	clip-path: polygon(0 0, 50% 100%, 100% 0);
+	text-align: center;
+	position: relative;
+	top: 0px;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+
+#header{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	z-index: 999;
+	position: absolute;
+	ul{
+		width: 100%;
+		height: 50%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		letter-spacing: 1px;
+		padding-left: 27px;
+		i{
+			position: fixed;
+			left: 20px;
+			top: 25px;
+		}
+		li{
+			margin-left: 9px;
+			&:hover{
+				a{
+					text-shadow: 0 0 10px $bela, 0 0 20px $bela, 0 0 30px $bela, 0 0 40px #e60073, 0 0 50px $svetlo-plava, 0 0 60px $svetlo-plava, 0 0 70px $svetlo-plava;
+				}
+			}
+			a{
+				color: $bela;
+				font-size: 14px;
+				text-shadow: 0 0 10px $svetlo-plava, 0 0 20px $svetlo-plava, 0 0 30px $svetlo-plava, 0 0 40px #e60073, 0 0 50px $svetlo-plava, 0 0 60px $svetlo-plava, 0 0 70px $svetlo-plava;
+			}
+		}
+	}
+}
+
+
+#wrapper{
+	width: 100%;
+	height: 2400px;
+
+	#main{
+		@include sirina;
+		background-image: url(../images/photo11.jpeg);
+		background-repeat: repeat-x;
+		animation: leftRight 19s infinite;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+		@keyframes leftRight{
+			0%{
+				background-position: left;
+			}
+			50%{
+				background-position: center;
+			}
+			100%{
+				background-position: left;
+			}
+		}
+		#over{
+			position: absolute;
+			z-index: 999;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			h1{
+				margin-bottom: 10px;
+				color: $bela;
+				&:hover{
+
+				}
+			}
+			p{
+				color: $bela;
+				font-size: 17px;
+			}
+		}
+		#clippy{
+			@include sirina;
+			background-color: $tamno-plava;
+			clip-path: polygon(77% 0, 87% 18%, 92% 38%, 100% 70%, 100% 100%, 50% 100%, 0 100%, 12% 72%, 30% 65%, 71% 11%);
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			animation: flip-in-y 1s;
+			@keyframes flip-in-y{
+				0% {
+				transform:  rotateY(90deg);
+				opacity: 0;
+				}
+				100% {
+				transform: perspective(400px) rotateY(0deg);
+				opacity: 1;
+				}
+			}
+			i{
+				font-size: 20px;
+				color: $bela;
+				margin-bottom: 50px;
+				text-shadow: 0 0 10px $svetlo-plava, 0 0 20px $svetlo-plava, 0 0 30px $svetlo-plava, 0 0 40px #e60073, 0 0 50px $svetlo-plava, 0 0 60px $svetlo-plava, 0 0 70px $svetlo-plava;
+				animation: up-down 1.7s infinite;
+			}
+		}
+	}
+	@keyframes up-down{
+		0% {
+	    transform: translate(0);
+		}
+		50% {
+			transform: translate(0, 10px);
+		}
+		100% {
+			transform: translate(0);
+		}
+	}
+
+
+	#skills{
+		@include sirina;
+		background-color: $svetlo-plava;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		.clippy2{
+			background-color: $tamno-plava;
+			h2{
+				color: $bela;
+			}
+		}
+		#quote{
+			color: $bela;
+			font-style: italic;
+			font-size: 16px;
+			padding: 30px;
+		}
+		#holder{
+			width: inherit;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			h3{
+				font-size: 17px;
+			}
+			.border{
+				min-width: 50px;
+				margin: 0px 20px 70px 20px;
+				border-left: 3px solid $bela;
+			    border-right: 3px solid $bela;
+				text-align: left;
+				h3,p{
+					padding: 0px 0px 15px 25px;
+					.percent{
+						float: right;
+						margin-right: 10%;
+					}
+					.skill-box{
+						display: flex;
+						align-items: center;
+						width: 90%;
+						height: 15px;
+						border: 2px $bela solid;
+						background-color: rgb(129, 148, 170);
+						.skill{
+							height: 60%;
+							background-color: $bela;
+							margin: 3px 2px 2px 2px;
+							box-shadow: 0 0 10px $svetlo-plava, 0 0 20px $bela, 0 0 30px $bela, 0 0 50px $svetlo-plava;
+
+						}
+						#skill-1{
+							width: 90%;
+						}
+						#skill-2{
+							width: 85%;
+						}
+						#skill-3{
+							width: 75%;
+						}
+						#skill-4{
+							width: 50%;
+						}
+						#skill-5{
+							width: 35%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+
+	#projects{
+		width: inherit;
+		min-height: 80vh;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $bela;
+		.clippy2{
+			background-color: $svetlo-plava;
+			position: static;
+			h2{
+				color: $tamno-plava;
+			}
+		}
+		.projekti{
+			width: 90%;
+			height: 100%;
+			margin-top: 20px;
+			.opis p{
+				color: $tamno-plava;
+				text-align: center;
+				font-style: italic;
+				font-size: 18.5px; 
+				span{
+					font-size: 15px;
+				}
+			}
+			.opis-drugi p{
+				text-align: left;
+				padding-left: 10.5%;
+			}
+			.front-page{
+				width: 90%;
+				height: 100%;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				margin-top: 10px;
+				margin-bottom: 30px;
+				p{
+					padding-bottom: 30px;
+					font-size: 110px;
+					line-height: 10px;
+					color: $tamno-plava;
+				}
+				img{
+					width: 100%;
+					&:hover{
+						filter: brightness(0.8);
+					}
+				}
+			}
+		}
+		.projekat-1 a, .projekat-3 a{
+			margin-left: 30px;
+		}
+		.projekat-2 a{
+			margin-right: 30px;
+		}
+		.projekat-3{
+			margin-bottom: 60px;
+		}
+	}
+
+
+	#about{
+		@include sirina;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: $tamno-plava;
+		color: $bela;
+		position: relative;
+		letter-spacing: 1px;
+		.clippy2{
+			background-color: $bela;
+			position: absolute;
+			h2{
+				color: $tamno-plava;
+			}
+		}
+		#me{
+			width: 100%;
+			height: 560px;
+			margin-bottom: 40px;
+			background-image: url(../images/me.jpg);
+			background-attachment: fixed;
+			background-size: cover;
+			background-position: top;
+			#text{
+				width: 90%;
+				margin-top: 100px;
+				p{
+					font-size: 14px;
+				}
+				p:nth-child(1n){
+					padding: 15px;
+					color: $bela;
+					text-align: left;
+					span{
+						font-size: 25px;
+					}
+				}
+				p:nth-child(2n){
+					padding: 15px;
+					margin-left: 9%;
+				}
+			}
+		}
+		#text-under-the-photo{
+			color: $bela;
+			letter-spacing: 1px;
+			padding: 5px;
+			text-align: center;
+		}
+		#illustrations{
+			width: 95%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-top: 3px $bela solid;
+			border-bottom: 3px $bela solid;
+			
+			margin-top: 45px;
+			margin-bottom: 40px;
+			h3{
+				margin-bottom: 30px;
+				margin-top: 20px;
+			}
+			#laptop, #mountain{
+				p{
+					padding-top: 20px;
+					padding-bottom: 23px;
+					text-transform: uppercase;
+					font-size: 13px;
+					letter-spacing: 2px;
+					text-align: center;
+					text-shadow: 0 0 10px $svetlo-plava, 0 0 35px $svetlo-plava;
+
+				}
+				img{
+					width: 100%;
+				}
+			}
+		}
+	}
+
+
+
+	#contact{
+		@include sirina;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		background-color: $bela;
+		.clippy2{
+			position: absolute;
+			top: 0px;
+			background-color: $tamno-plava;
+			h2{
+				color: $bela;
+			}
+		}
+		p{
+			color: $tamno-plava;
+			letter-spacing: 2px;
+			margin-top: 30px;
+		}
+		#forma-drzac{
+			width: inherit;
+			display: flex;
+			justify-content: center;
+			margin-top: 20px;
+			margin-bottom: 0px;
+			form{
+				ul{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					li{
+						width: 100%;
+						margin-top: 30px;
+						border-bottom: 2px $tamno-plava solid;
+						outline: none;
+						&:hover{
+							border-bottom: 2px rgb(105, 132, 147) solid;
+						}
+						i{
+							margin-right: 30px;
+							margin-left: 20px;
+							color: $tamno-plava;
+						}
+						input{
+							border: 0;
+							padding: 10px;
+							background: transparent;
+							outline: none;
+							color: $tamno-plava;
+							letter-spacing: 1px;
+							&::placeholder{
+								color: rgb(105, 132, 147);
+							}
+						}
+						textarea{
+							resize: none;
+							outline: none;
+							border: none;
+							background-color: transparent;
+							margin-left: 10px;
+							margin-top: 15px;
+							color: rgb(105, 132, 147);
+							letter-spacing: 1px;
+							&::placeholder{
+								color: rgb(105, 132, 147);
+							}
+						}
+					}
+					#treci-li{
+						display: flex;
+						align-items: center;
+						margin-top: 20px;
+					}
+					#submit{
+						width: 80px;
+						height: 50px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border: 0;
+						border-radius: 2px;
+						transition: all 0.7s ease;
+						&:hover{
+							background-color: $tamno-plava;
+							i{
+								color: $bela;
+							}
+						}
+						i{
+							font-size: 25px;
+							margin: 0;
+							transition: color 0.7s ease;
+						}
+					}
+				}
+			}
+		}
+		#footer{
+			width: 90%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			bottom: 20px;
+			a{
+				font-size: 25px;
+				margin: 20px;
+				color: $tamno-plava;
+				&:hover{
+					color: rgb(93, 124, 140);
+				}
+			}
+		}
+	}
+}
+
+
+
+@media only screen and (min-width: 400px){
+	body #header ul li{
+		padding: 5px;
+		a{
+			font-size: 15px;
+		}
+	}
+	body #wrapper #projects .projekti .front-page p{
+		font-size: 130px;
+	}
+	body #wrapper #about #me #text{
+		width: 65%;
+	}
+	body #wrapper #about #illustrations{
+		width: 350px;
+	}
+}
+
+@media only screen and (min-width: 500px){
+	body #header ul li{
+		padding: 10px;
+	}
+	body #quote p{
+		font-size: 22px;
+	}
+	body #wrapper #projects .projekti .opis p{
+		font-size: 23px;
+	}
+	body #wrapper #about #me #text p{
+		font-size: 16px;
+	}
+	body #wrapper #about #container{
+		width: 410px;
+	}
+	body #wrapper #about #illustrations{
+		width: 90%;
+		margin-bottom: 100px;
+		#photo-illustration-box{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			img{
+				width: 100%;
+				height: 70%;
+			}
+			#laptop{
+				margin-right: 10%;
+			}
+		}
+	}
+}
+
+
+
+@media only screen and (min-width: 650px){
+	@mixin naslov{
+		font-size: 28px;
+		letter-spacing: 4px;
+	}
+	body #wrapper #main #over h1{
+		font-size: 35px;
+	}
+	body #wrapper #main #over p{
+		font-size: 21px;
+	}
+	body #wrapper #projects .projekti .front-page p{
+		font-size: 160px;
+	}
+	body #wrapper #about #text p{
+		font-size: 18px;
+	}
+	body #wrapper #about #text-under-the-photo{
+		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width: 900px){
+	body #wrapper #about #illustrations #photo-illustration-box img{
+		width: 370px;
+		height: 230px;
+	}
+	body #wrapper #about #me #text{
+		width: 50%;
+	}
+}
+
+@media only screen and (min-width: 950px){
+	body #header ul li a i{
+		top: 20px;
+	}
+	body #header ul li a{
+		font-size: 27px;
+		padding-left: 10px;
+	}
+	body #wrapper #main #over h1{
+		font-size: 41px;
+	}
+	body #wrapper #main #over p{
+		font-size: 25px;
+	}
+	body #wrapper #projects .projekti .front-page p{
+		font-size: 180px;
+	}
+}

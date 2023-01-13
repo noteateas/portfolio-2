@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css?family=Palanquin+Dark&subset=latin-ext");
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Palanquin Dark', sans-serif;
+  box-sizing: border-box;
+  cursor: url(../images/cursor.png), auto; }
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  font-size: 23px;
+  letter-spacing: 3px;
+  padding-top: 15px; }
+
+.clippy2 {
+  width: inherit;
+  padding-bottom: 50px;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  text-align: center;
+  position: relative;
+  top: 0px; }
+
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none; }
+
+#header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  position: absolute; }
+  #header ul {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    letter-spacing: 1px;
+    padding-left: 27px; }
+    #header ul i {
+      position: fixed;
+      left: 20px;
+      top: 25px; }
+    #header ul li {
+      margin-left: 9px; }
+      #header ul li:hover a {
+        text-shadow: 0 0 10px #f3fede, 0 0 20px #f3fede, 0 0 30px #f3fede, 0 0 40px #e60073, 0 0 50px #95c2d9, 0 0 60px #95c2d9, 0 0 70px #95c2d9; }
+      #header ul li a {
+        color: #f3fede;
+        font-size: 14px;
+        text-shadow: 0 0 10px #95c2d9, 0 0 20px #95c2d9, 0 0 30px #95c2d9, 0 0 40px #e60073, 0 0 50px #95c2d9, 0 0 60px #95c2d9, 0 0 70px #95c2d9; }
+
+#wrapper {
+  width: 100%;
+  height: 2400px; }
+  #wrapper #main {
+    width: inherit;
+    min-height: 100vh;
+    background-image: url(../images/photo11.jpeg);
+    background-repeat: repeat-x;
+    animation: leftRight 19s infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; }
+@keyframes leftRight {
+  0% {
+    background-position: left; }
+  50% {
+    background-position: center; }
+  100% {
+    background-position: left; } }
+    #wrapper #main #over {
+      position: absolute;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; }
+      #wrapper #main #over h1 {
+        margin-bottom: 10px;
+        color: #f3fede; }
+      #wrapper #main #over p {
+        color: #f3fede;
+        font-size: 17px; }
+    #wrapper #main #clippy {
+      width: inherit;
+      min-height: 100vh;
+      background-color: #0c0121;
+      clip-path: polygon(77% 0, 87% 18%, 92% 38%, 100% 70%, 100% 100%, 50% 100%, 0 100%, 12% 72%, 30% 65%, 71% 11%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      animation: flip-in-y 1s; }
+@keyframes flip-in-y {
+  0% {
+    transform: rotateY(90deg);
+    opacity: 0; }
+  100% {
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1; } }
+      #wrapper #main #clippy i {
+        font-size: 20px;
+        color: #f3fede;
+        margin-bottom: 50px;
+        text-shadow: 0 0 10px #95c2d9, 0 0 20px #95c2d9, 0 0 30px #95c2d9, 0 0 40px #e60073, 0 0 50px #95c2d9, 0 0 60px #95c2d9, 0 0 70px #95c2d9;
+        animation: up-down 1.7s infinite; }
+@keyframes up-down {
+  0% {
+    transform: translate(0); }
+  50% {
+    transform: translate(0, 10px); }
+  100% {
+    transform: translate(0); } }
+  #wrapper #skills {
+    width: inherit;
+    min-height: 100vh;
+    background-color: #95c2d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    #wrapper #skills .clippy2 {
+      background-color: #0c0121; }
+      #wrapper #skills .clippy2 h2 {
+        color: #f3fede; }
+    #wrapper #skills #quote {
+      color: #f3fede;
+      font-style: italic;
+      font-size: 16px;
+      padding: 30px; }
+    #wrapper #skills #holder {
+      width: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      #wrapper #skills #holder h3 {
+        font-size: 17px; }
+      #wrapper #skills #holder .border {
+        min-width: 50px;
+        margin: 0px 20px 70px 20px;
+        border-left: 3px solid #f3fede;
+        border-right: 3px solid #f3fede;
+        text-align: left; }
+        #wrapper #skills #holder .border h3, #wrapper #skills #holder .border p {
+          padding: 0px 0px 15px 25px; }
+          #wrapper #skills #holder .border h3 .percent, #wrapper #skills #holder .border p .percent {
+            float: right;
+            margin-right: 10%; }
+          #wrapper #skills #holder .border h3 .skill-box, #wrapper #skills #holder .border p .skill-box {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            height: 15px;
+            border: 2px #f3fede solid;
+            background-color: #8194aa; }
+            #wrapper #skills #holder .border h3 .skill-box .skill, #wrapper #skills #holder .border p .skill-box .skill {
+              height: 60%;
+              background-color: #f3fede;
+              margin: 3px 2px 2px 2px;
+              box-shadow: 0 0 10px #95c2d9, 0 0 20px #f3fede, 0 0 30px #f3fede, 0 0 50px #95c2d9; }
+            #wrapper #skills #holder .border h3 .skill-box #skill-1, #wrapper #skills #holder .border p .skill-box #skill-1 {
+              width: 90%; }
+            #wrapper #skills #holder .border h3 .skill-box #skill-2, #wrapper #skills #holder .border p .skill-box #skill-2 {
+              width: 85%; }
+            #wrapper #skills #holder .border h3 .skill-box #skill-3, #wrapper #skills #holder .border p .skill-box #skill-3 {
+              width: 75%; }
+            #wrapper #skills #holder .border h3 .skill-box #skill-4, #wrapper #skills #holder .border p .skill-box #skill-4 {
+              width: 50%; }
+            #wrapper #skills #holder .border h3 .skill-box #skill-5, #wrapper #skills #holder .border p .skill-box #skill-5 {
+              width: 35%; }
+  #wrapper #projects {
+    width: inherit;
+    min-height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3fede; }
+    #wrapper #projects .clippy2 {
+      background-color: #95c2d9;
+      position: static; }
+      #wrapper #projects .clippy2 h2 {
+        color: #0c0121; }
+    #wrapper #projects .projekti {
+      width: 90%;
+      height: 100%;
+      margin-top: 20px; }
+      #wrapper #projects .projekti .opis p {
+        color: #0c0121;
+        text-align: center;
+        font-style: italic;
+        font-size: 18.5px; }
+        #wrapper #projects .projekti .opis p span {
+          font-size: 15px; }
+      #wrapper #projects .projekti .opis-drugi p {
+        text-align: left;
+        padding-left: 10.5%; }
+      #wrapper #projects .projekti .front-page {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 30px; }
+        #wrapper #projects .projekti .front-page p {
+          padding-bottom: 30px;
+          font-size: 110px;
+          line-height: 10px;
+          color: #0c0121; }
+        #wrapper #projects .projekti .front-page img {
+          width: 100%; }
+          #wrapper #projects .projekti .front-page img:hover {
+            filter: brightness(0.8); }
+    #wrapper #projects .projekat-1 a, #wrapper #projects .projekat-3 a {
+      margin-left: 30px; }
+    #wrapper #projects .projekat-2 a {
+      margin-right: 30px; }
+    #wrapper #projects .projekat-3 {
+      margin-bottom: 60px; }
+  #wrapper #about {
+    width: inherit;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0c0121;
+    color: #f3fede;
+    position: relative;
+    letter-spacing: 1px; }
+    #wrapper #about .clippy2 {
+      background-color: #f3fede;
+      position: absolute; }
+      #wrapper #about .clippy2 h2 {
+        color: #0c0121; }
+    #wrapper #about #me {
+      width: 100%;
+      height: 560px;
+      margin-bottom: 40px;
+      background-image: url(../images/me.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: top; }
+      #wrapper #about #me #text {
+        width: 90%;
+        margin-top: 100px; }
+        #wrapper #about #me #text p {
+          font-size: 14px; }
+        #wrapper #about #me #text p:nth-child(1n) {
+          padding: 15px;
+          color: #f3fede;
+          text-align: left; }
+          #wrapper #about #me #text p:nth-child(1n) span {
+            font-size: 25px; }
+        #wrapper #about #me #text p:nth-child(2n) {
+          padding: 15px;
+          margin-left: 9%; }
+    #wrapper #about #text-under-the-photo {
+      color: #f3fede;
+      letter-spacing: 1px;
+      padding: 5px;
+      text-align: center; }
+    #wrapper #about #illustrations {
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 3px #f3fede solid;
+      border-bottom: 3px #f3fede solid;
+      margin-top: 45px;
+      margin-bottom: 40px; }
+      #wrapper #about #illustrations h3 {
+        margin-bottom: 30px;
+        margin-top: 20px; }
+      #wrapper #about #illustrations #laptop p, #wrapper #about #illustrations #mountain p {
+        padding-top: 20px;
+        padding-bottom: 23px;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-align: center;
+        text-shadow: 0 0 10px #95c2d9, 0 0 35px #95c2d9; }
+      #wrapper #about #illustrations #laptop img, #wrapper #about #illustrations #mountain img {
+        width: 100%; }
+  #wrapper #contact {
+    width: inherit;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #f3fede; }
+    #wrapper #contact .clippy2 {
+      position: absolute;
+      top: 0px;
+      background-color: #0c0121; }
+      #wrapper #contact .clippy2 h2 {
+        color: #f3fede; }
+    #wrapper #contact p {
+      color: #0c0121;
+      letter-spacing: 2px;
+      margin-top: 30px; }
+    #wrapper #contact #forma-drzac {
+      width: inherit;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 0px; }
+      #wrapper #contact #forma-drzac form ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        #wrapper #contact #forma-drzac form ul li {
+          width: 100%;
+          margin-top: 30px;
+          border-bottom: 2px #0c0121 solid;
+          outline: none; }
+          #wrapper #contact #forma-drzac form ul li:hover {
+            border-bottom: 2px #698493 solid; }
+          #wrapper #contact #forma-drzac form ul li i {
+            margin-right: 30px;
+            margin-left: 20px;
+            color: #0c0121; }
+          #wrapper #contact #forma-drzac form ul li input {
+            border: 0;
+            padding: 10px;
+            background: transparent;
+            outline: none;
+            color: #0c0121;
+            letter-spacing: 1px; }
+            #wrapper #contact #forma-drzac form ul li input::placeholder {
+              color: #698493; }
+          #wrapper #contact #forma-drzac form ul li textarea {
+            resize: none;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            margin-left: 10px;
+            margin-top: 15px;
+            color: #698493;
+            letter-spacing: 1px; }
+            #wrapper #contact #forma-drzac form ul li textarea::placeholder {
+              color: #698493; }
+        #wrapper #contact #forma-drzac form ul #treci-li {
+          display: flex;
+          align-items: center;
+          margin-top: 20px; }
+        #wrapper #contact #forma-drzac form ul #submit {
+          width: 80px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 0;
+          border-radius: 2px;
+          transition: all 0.7s ease; }
+          #wrapper #contact #forma-drzac form ul #submit:hover {
+            background-color: #0c0121; }
+            #wrapper #contact #forma-drzac form ul #submit:hover i {
+              color: #f3fede; }
+          #wrapper #contact #forma-drzac form ul #submit i {
+            font-size: 25px;
+            margin: 0;
+            transition: color 0.7s ease; }
+    #wrapper #contact #footer {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 20px; }
+      #wrapper #contact #footer a {
+        font-size: 25px;
+        margin: 20px;
+        color: #0c0121; }
+        #wrapper #contact #footer a:hover {
+          color: #5d7c8c; }
+
+@media only screen and (min-width: 400px) {
+  body #header ul li {
+    padding: 5px; }
+    body #header ul li a {
+      font-size: 15px; }
+
+  body #wrapper #projects .projekti .front-page p {
+    font-size: 130px; }
+
+  body #wrapper #about #me #text {
+    width: 65%; }
+
+  body #wrapper #about #illustrations {
+    width: 350px; } }
+@media only screen and (min-width: 500px) {
+  body #header ul li {
+    padding: 10px; }
+
+  body #quote p {
+    font-size: 22px; }
+
+  body #wrapper #projects .projekti .opis p {
+    font-size: 23px; }
+
+  body #wrapper #about #me #text p {
+    font-size: 16px; }
+
+  body #wrapper #about #container {
+    width: 410px; }
+
+  body #wrapper #about #illustrations {
+    width: 90%;
+    margin-bottom: 100px; }
+    body #wrapper #about #illustrations #photo-illustration-box {
+      width: 100%;
+      display: flex;
+      justify-content: center; }
+      body #wrapper #about #illustrations #photo-illustration-box img {
+        width: 100%;
+        height: 70%; }
+      body #wrapper #about #illustrations #photo-illustration-box #laptop {
+        margin-right: 10%; } }
+@media only screen and (min-width: 650px) {
+  body #wrapper #main #over h1 {
+    font-size: 35px; }
+
+  body #wrapper #main #over p {
+    font-size: 21px; }
+
+  body #wrapper #projects .projekti .front-page p {
+    font-size: 160px; }
+
+  body #wrapper #about #text p {
+    font-size: 18px; }
+
+  body #wrapper #about #text-under-the-photo {
+    font-size: 20px; } }
+@media only screen and (min-width: 900px) {
+  body #wrapper #about #illustrations #photo-illustration-box img {
+    width: 370px;
+    height: 230px; }
+
+  body #wrapper #about #me #text {
+    width: 50%; } }
+@media only screen and (min-width: 950px) {
+  body #header ul li a i {
+    top: 20px; }
+
+  body #header ul li a {
+    font-size: 27px;
+    padding-left: 10px; }
+
+  body #wrapper #main #over h1 {
+    font-size: 41px; }
+
+  body #wrapper #main #over p {
+    font-size: 25px; }
+
+  body #wrapper #projects .projekti .front-page p {
+    font-size: 180px; } }
+
+/*# sourceMappingURL=style.css.map */
